@@ -18,7 +18,7 @@ const Posts = () => {
             <Switch>
                 <Route exact path={path}>
                 {
-                    postList.map(post => <Post key={post.id} post={post} showDetail={false}/>)
+                    postList.map(post => <Post key={post.id} post={post} showDetail={true}/>)
                 }
                 </Route>
                 <Route path={`${path}/:postId`}>

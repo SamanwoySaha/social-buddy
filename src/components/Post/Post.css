@@ -1,0 +1,9 @@
+.post {
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.seeMore-btn {
+    margin-left: auto !important;
+    margin-right: 10px !important;
+}
