@@ -14,6 +14,7 @@ const PostDetail = () => {
         .then(res => res.json())
         .then(data => setPost(data));
     }, []);
+    console.log(post);
     
     const [commentList, setCommentList] = useState([]);
     useEffect(() => {
@@ -23,25 +24,18 @@ const PostDetail = () => {
     }, []);
     
     const [pictures, setPictures] = useState([]);
-    const apiKey = '16482482-28c666e38803dfcff5da4bb07';
     useEffect(() => {
-        fetch(`https://pixabay.com/api/?key=${apiKey}&q=yellow+flowers&image_type=photo&pretty=true`)
+        fetch(`http://jsonplaceholder.typicode.com/photos?_start=0&_limit=500`)
             .then(res => res.json())
-            .then(data => setPictures(data.hits)); 
+            .then(data => setPictures(data));          
     }, []);
-    // useEffect(() => {
-    //     fetch(`https://randomuser.me/api/?results=500&inc=picture`)
-    //         .then(res => res.json())
-    //         .then(data => setPictures(data.results)); 
-    // }, []);
-    // console.log(pictures);
 
     return (
         <div>
-            <Post post={post} showDetail={false} />
+            <Post post={post} offDetail={false} />
             <Paper elevation={2} className='commentList'>
                 {
-                    commentList.map(comment => <Comment key={comment.id} picture={pictures[comment.id]} comment={comment} />)
+                    commentList.map((comment) => <Comment key={comment.id} pictures={pictures} comment={comment} />)
                 }
             </Paper>
         </div>

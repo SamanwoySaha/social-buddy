@@ -11,7 +11,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import { useHistory } from 'react-router-dom';
 
-const Post = ({ post, showDetail }) => {
+const Post = ({ post, offDetail }) => {
     const history = useHistory();
     const handleClick = () => {
         history.push(`/posts/${id}`);
@@ -20,7 +20,7 @@ const Post = ({ post, showDetail }) => {
 
     return (
         <Card className='post'>
-            <CardActionArea>
+            <CardActionArea onClick={handleClick}>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
                         {title}
@@ -38,7 +38,7 @@ const Post = ({ post, showDetail }) => {
                     <ShareIcon />
                 </IconButton>
                 {
-                    showDetail && 
+                    offDetail && 
                     <Button onClick={handleClick} className="seeMore-btn" size="small" color="primary">See More</Button>
                 }
             </CardActions>

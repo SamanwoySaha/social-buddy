@@ -4,16 +4,16 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
 
-const Comment = ({ comment, picture }) => {
+const Comment = ({ comment, pictures }) => {
     const { name, body, email } = comment;
-    const {previewURL} = picture || {};
-    console.log(previewURL);
+    const picture = pictures.find(image => image.id === comment.id);
+    const {thumbnailUrl} = picture || {};
 
     return (
         <div className="comment">
-            <Grid container wrap="nowrap" spacing={2} container direction="row" justify="flex-start" alignItems="flex-start">
+            <Grid container wrap="nowrap" spacing={2} direction="row" justify="flex-start" alignItems="flex-start">
                 <Grid item>
-                    <Avatar alt="user" src={previewURL} />
+                    <Avatar alt="user" src= {thumbnailUrl} />
                 </Grid>
                 <Grid item xs>
                     <Typography variant="h5">Name: {name}</Typography>
