@@ -18,14 +18,14 @@ const PostDetail = () => {
     
     const [commentList, setCommentList] = useState([]);
     useEffect(() => {
-        fetch(`http://jsonplaceholder.typicode.com/comments?postId=${postId}`)
+        fetch(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`)
         .then(res => res.json())
         .then(data => setCommentList(data));
     }, []);
     
     const [pictures, setPictures] = useState([]);
     useEffect(() => {
-        fetch(`http://jsonplaceholder.typicode.com/photos?_start=0&_limit=500`)
+        fetch(`https://jsonplaceholder.typicode.com/photos?_start=0&_limit=500`)
             .then(res => res.json())
             .then(data => setPictures(data));          
     }, []);
