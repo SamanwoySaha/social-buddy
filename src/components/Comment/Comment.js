@@ -16,9 +16,11 @@ const Comment = ({ comment, pictures }) => {
                     <Avatar alt="user" src= {thumbnailUrl} />
                 </Grid>
                 <Grid item xs>
-                    <Typography variant="h5">Name: {name}</Typography>
-                    <Typography variant="subtitle1">Email: {email}</Typography>
-                    <Typography variant='body1'>{body}</Typography>
+                    <Typography className="comment-heading" variant="h5">Name: {name}</Typography>
+                    <Typography className="email body" variant="subtitle1">
+                        Email: {email}
+                    </Typography>
+                    <Typography className="body" variant='body1'>{body}</Typography>
                 </Grid>
             </Grid>
         </div>

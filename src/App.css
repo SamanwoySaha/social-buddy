@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:wght@400;500;700&display=swap');
+
 * {
   margin: 0;
 }
+
+:root {
+  --heading-font: 'Balsamiq Sans', sans-serif;
+  --body-font: 'Roboto', sans-serif;
+  --pri-color: #5F269F;
+  --sec-color: #07C3DE;
+  --font-sec-color: #222;
+}
+

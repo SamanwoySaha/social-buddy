@@ -7,3 +7,15 @@
     margin-left: auto !important;
     margin-right: 10px !important;
 }
+
+.post-heading {
+    font-family: var(--heading-font) !important;
+    color: var(--pri-color) !important;
+    font-size: 22px !important;
+}
+
+.body {
+    font-family: var(--body-font) !important;
+    color: var(--font-sec-color) !important;
+    font-size: 14px !important;
+}

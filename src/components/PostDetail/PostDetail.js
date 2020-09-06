@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './PostDetail.css';
 import { useParams } from 'react-router-dom';
 import Post from '../Post/Post';
-import Comment from '../Header/Comment/Comment';
 import { Paper } from '@material-ui/core';
+import Comment from '../Comment/Comment';
 
 const PostDetail = () => {
     const { postId } = useParams();

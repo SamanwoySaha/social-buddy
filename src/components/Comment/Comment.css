@@ -1,0 +1,14 @@
+.comment {
+    margin: 10px 0;
+}
+
+.comment-heading {
+    font-family: var(--body-font) !important;
+    color: var(--pri-color) !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+}
+  
+.email {
+    font-weight: 500 !important;
+}

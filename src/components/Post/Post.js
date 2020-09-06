@@ -10,6 +10,8 @@ import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import { useHistory } from 'react-router-dom';
+import Avatar from '@material-ui/core/Avatar';
+import AvatarGroup from '@material-ui/lab/AvatarGroup';
 
 const Post = ({ post, offDetail }) => {
     const history = useHistory();
@@ -22,10 +24,10 @@ const Post = ({ post, offDetail }) => {
         <Card className='post'>
             <CardActionArea onClick={handleClick}>
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <Typography className="post-heading" gutterBottom variant="h5" component="h2">
                         {title}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
+                    <Typography className="body" variant="body2" color="textSecondary" component="p">
                         {body}
                     </Typography>
                 </CardContent>
@@ -38,8 +40,7 @@ const Post = ({ post, offDetail }) => {
                     <ShareIcon />
                 </IconButton>
                 {
-                    offDetail && 
-                    <Button onClick={handleClick} className="seeMore-btn" size="small" color="primary">See More</Button>
+                    offDetail && <Button onClick={handleClick} className="seeMore-btn" size="small" color="primary">See More</Button>
                 }
             </CardActions>
         </Card>

@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('sm')]: {
             display: 'block',
         },
+        fontFamily: 'Balsamiq Sans'
     },
     search: {
         position: 'relative',
@@ -167,7 +168,7 @@ const Header = () => {
     return (
         <div>
             <div className={classes.grow}>
-                <AppBar position="static">
+                <AppBar className="navbar" position="static">
                     <Container fixed>
                         <Toolbar>
                             <IconButton
@@ -179,8 +180,8 @@ const Header = () => {
                                 <MenuIcon />
                             </IconButton>
                             <Typography className={classes.title} variant="h6" noWrap>
-                                Material-UI
-                        </Typography>
+                                Buddy App
+                            </Typography>
                             <div className={classes.search}>
                                 <div className={classes.searchIcon}>
                                     <SearchIcon />
