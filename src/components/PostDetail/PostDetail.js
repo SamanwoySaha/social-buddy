@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import Post from '../Post/Post';
 import { Paper } from '@material-ui/core';
 import Comment from '../Comment/Comment';
+import NoMatch from '../NoMatch/NoMatch';
 
 const PostDetail = () => {
     const { postId } = useParams();
@@ -14,7 +15,6 @@ const PostDetail = () => {
         .then(res => res.json())
         .then(data => setPost(data));
     }, []);
-    console.log(post);
     
     const [commentList, setCommentList] = useState([]);
     useEffect(() => {
@@ -30,16 +30,21 @@ const PostDetail = () => {
             .then(data => setPictures(data));          
     }, []);
 
-    return (
-        <div>
-            <Post post={post} offDetail={false} />
-            <Paper elevation={2} className='commentList'>
-                {
-                    commentList.map((comment) => <Comment key={comment.id} pictures={pictures} comment={comment} />)
-                }
-            </Paper>
-        </div>
-    );
+    if(postId >= 1 || postId <= 100){
+        return (
+            <div className="post-detail">
+                <Post post={post} offDetail={false} />
+                <Paper elevation={2} className='commentList'>
+                    {
+                        commentList.map((comment) => <Comment key={comment.id} pictures={pictures} comment={comment} />)
+                    }
+                </Paper>
+            </div>
+        );
+    }
+    else {
+        return <NoMatch />
+    }
 };
 
 export default PostDetail;

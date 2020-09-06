@@ -8,7 +8,6 @@ import {
   Route
 } from 'react-router-dom';
 import NoMatch from './components/NoMatch/NoMatch';
-import PostDetail from './components/PostDetail/PostDetail';
 
 function App() {
   return (
@@ -16,13 +15,10 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          {/* <Route exact path="/post/:postId">
-              <PostDetail />
-          </Route> */}
-          <Route path="/posts">
+          <Route exact path="/">
             <Posts />
           </Route>
-          <Route exact path="/">
+          <Route path="/posts">
             <Posts />
           </Route>
           <Route path="*">

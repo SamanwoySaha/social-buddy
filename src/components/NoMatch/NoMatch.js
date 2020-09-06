@@ -3,8 +3,9 @@ import './NoMatch.css';
 
 const NoMatch = () => {
     return (
-        <div>
-            <h1>no route found</h1>
+        <div className="no-match">
+            <h1>404 Error!!</h1>
+            <h1>Route Not Found</h1>
         </div>
     );
 };

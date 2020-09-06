@@ -7,8 +7,16 @@
 :root {
   --heading-font: 'Balsamiq Sans', sans-serif;
   --body-font: 'Roboto', sans-serif;
-  --pri-color: #5F269F;
-  --sec-color: #07C3DE;
+  --pri-color: #292c4a;
   --font-sec-color: #222;
 }
 
+.app {
+  background-image: url("https://i.ibb.co/FXhNrhY/Dark-Blue-and-Colorful-Confetti-Fun-Shareable-Zoom-Background-1.png");
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 130px;
+}

@@ -3,10 +3,10 @@ import './Posts.css';
 import { useRouteMatch, Route, Switch } from 'react-router-dom';
 import PostDetail from '../PostDetail/PostDetail';
 import Post from '../Post/Post';
-import NoMatch from '../NoMatch/NoMatch';
 
 const Posts = () => {
     let { path } = useRouteMatch();
+    
     const [postList, setPostList] = useState([]);
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/posts')
@@ -15,8 +15,13 @@ const Posts = () => {
     }, []);
 
     function allPosts() {
-        return(
-            postList.map(post => <Post key={post.id} post={post} offDetail={true} />)
+        return (
+            <div>
+                <h1 className="post-count">Posts: {postList.length}</h1>
+                {
+                    postList.map(post => <Post key={post.id} post={post} offDetail={true} />)
+                }
+            </div>
         );
     }
 
@@ -27,10 +32,7 @@ const Posts = () => {
                     <PostDetail />
                 </Route>
                 <Route path={path}>
-                    { allPosts }
-                </Route>
-                <Route exact path="*">
-                    <NoMatch />
+                    {allPosts}
                 </Route>
             </Switch>
         </div>

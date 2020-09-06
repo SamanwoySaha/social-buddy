@@ -10,24 +10,23 @@ import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import { useHistory } from 'react-router-dom';
-import Avatar from '@material-ui/core/Avatar';
-import AvatarGroup from '@material-ui/lab/AvatarGroup';
 
 const Post = ({ post, offDetail }) => {
-    const history = useHistory();
-    const handleClick = () => {
-        history.push(`/posts/${id}`);
-    }
     const { title, body, id } = post;
+
+    const history = useHistory();
+    const handleClick = (postId) => {
+        history.push(`/posts/${postId}`);
+    }
 
     return (
         <Card className='post'>
-            <CardActionArea onClick={handleClick}>
+            <CardActionArea onClick={() => handleClick(id)}>
                 <CardContent>
                     <Typography className="post-heading" gutterBottom variant="h5" component="h2">
                         {title}
                     </Typography>
-                    <Typography className="body" variant="body2" color="textSecondary" component="p">
+                    <Typography className="body-text" variant="body2" color="textSecondary" component="p">
                         {body}
                     </Typography>
                 </CardContent>
@@ -40,7 +39,7 @@ const Post = ({ post, offDetail }) => {
                     <ShareIcon />
                 </IconButton>
                 {
-                    offDetail && <Button onClick={handleClick} className="seeMore-btn" size="small" color="primary">See More</Button>
+                    offDetail && <Button onClick={() => handleClick(id)} className="seeMore-btn" variant="contained" size="small" color="primary">See More</Button>
                 }
             </CardActions>
         </Card>

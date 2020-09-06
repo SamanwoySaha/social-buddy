@@ -17,10 +17,10 @@ const Comment = ({ comment, pictures }) => {
                 </Grid>
                 <Grid item xs>
                     <Typography className="comment-heading" variant="h5">Name: {name}</Typography>
-                    <Typography className="email body" variant="subtitle1">
+                    <Typography className="email body-text" variant="subtitle1">
                         Email: {email}
                     </Typography>
-                    <Typography className="body" variant='body1'>{body}</Typography>
+                    <Typography className="body-text" variant='body1'>{body}</Typography>
                 </Grid>
             </Grid>
         </div>
